@@ -1,8 +1,5 @@
 package actor.proto.mailbox
 
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.CoroutineStart
-import kotlinx.coroutines.experimental.launch
 import java.util.concurrent.atomic.AtomicInteger
 
 private val emptyStats = arrayOf<MailboxStatistics>()
