@@ -7,6 +7,7 @@
     <artifactId>proto-parent</artifactId>
     <version>1</version>
     <packaging>jar</packaging>
+    <name>Proto Parent</name>
     <url>http://proto.actor</url>
     <licenses>
         <license>
@@ -46,6 +47,11 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
