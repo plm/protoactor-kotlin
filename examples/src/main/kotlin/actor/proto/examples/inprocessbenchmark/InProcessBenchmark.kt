@@ -4,7 +4,6 @@ package actor.proto.examples.inprocessbenchmark
 import actor.proto.*
 import actor.proto.mailbox.ThreadPoolDispatcher
 import actor.proto.mailbox.mpscMailbox
-import java.lang.System.currentTimeMillis
 import java.lang.System.nanoTime
 import java.util.concurrent.CountDownLatch
 
