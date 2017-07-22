@@ -10,6 +10,7 @@
 
     <artifactId>proto-actor</artifactId>
     <name>Proto.Actor Core</name>
+
     <version>${package.version}</version>
   
     <repositories>

@@ -10,13 +10,7 @@
 
     <artifactId>examples</artifactId>
     <name>Proto.Actor Examples</name>
-    <version>${package.version}</version>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
+
 
     <dependencies>
         <dependency>
@@ -50,6 +44,7 @@
             <artifactId>proto-remote</artifactId>
             <version>${package.version}</version>
         </dependency>
+
     </dependencies>
 
 </project>
