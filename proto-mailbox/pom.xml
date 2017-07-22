@@ -5,14 +5,14 @@
     <parent>
         <groupId>actor.proto</groupId>
         <artifactId>proto-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1</version>
     </parent>
 
     <artifactId>proto-mailbox</artifactId>
 
     <name>Proto.Actor Mailbox</name>
     <description>Mailbox core implementation for Proto.Actor</description>
- 
+    <version>${package.version}</version>
     <repositories>
         <repository>
             <id>central</id>

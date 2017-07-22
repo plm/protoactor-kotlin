@@ -5,11 +5,12 @@
     <parent>
         <groupId>actor.proto</groupId>
         <artifactId>proto-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1</version>
     </parent>
 
     <artifactId>proto-actor</artifactId>
     <name>Proto.Actor Core</name>
+    <version>${package.version}</version>
   
     <repositories>
         <repository>
@@ -29,7 +30,7 @@
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-mailbox</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
     </dependencies>
 

@@ -5,12 +5,12 @@
     <parent>
         <groupId>actor.proto</groupId>
         <artifactId>proto-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1</version>
     </parent>
 
     <artifactId>examples</artifactId>
     <name>Proto.Actor Examples</name>
-
+    <version>${package.version}</version>
     <repositories>
         <repository>
             <id>central</id>
@@ -33,22 +33,22 @@
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-actor</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-mailbox</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-router</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-remote</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
     </dependencies>
 

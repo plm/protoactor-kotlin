@@ -5,11 +5,12 @@
     <parent>
         <groupId>actor.proto</groupId>
         <artifactId>proto-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1</version>
     </parent>
 
     <artifactId>proto-router</artifactId>
     <name>Proto.Actor Router</name>
+    <version>${package.version}</version>
   
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
@@ -21,12 +22,12 @@
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-actor</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-mailbox</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
     </dependencies>
 

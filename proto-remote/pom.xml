@@ -5,12 +5,13 @@
     <parent>
         <groupId>actor.proto</groupId>
         <artifactId>proto-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1</version>
     </parent>
 
     <artifactId>proto-remote</artifactId>
     <name>Proto.Actor Remote</name>
-  
+    <version>${package.version}</version>
+
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
@@ -30,12 +31,12 @@
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-actor</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
         <dependency>
             <groupId>actor.proto</groupId>
             <artifactId>proto-mailbox</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${package.version}</version>
         </dependency>
     </dependencies>
 
