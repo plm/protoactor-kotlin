@@ -15,12 +15,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="examples" target="1.5" />
-      <module name="proto-actor" target="1.5" />
-      <module name="proto-mailbox" target="1.5" />
-      <module name="proto-parent" target="1.5" />
-      <module name="proto-remote" target="1.5" />
-      <module name="proto-router" target="1.5" />
+      <module name="examples" target="1.8" />
+      <module name="proto-actor" target="1.8" />
+      <module name="proto-mailbox" target="1.8" />
+      <module name="proto-parent" target="1.8" />
+      <module name="proto-remote" target="1.8" />
+      <module name="proto-router" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
