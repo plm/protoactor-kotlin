@@ -167,7 +167,10 @@ class ActorContext(private val producer: () -> Actor, private val supervisorStra
         }
         _message = msg
         return if (receiveMiddleware != null) receiveMiddleware.invoke(this)
-        else ContextHelper.defaultReceive(this)
+        else when (message) {
+            is PoisonPill -> self.stop()
+            else -> actor.receive(this)
+        }
     }
 
     suspend override fun escalateFailure(reason: Exception, message: Any) = escalateFailure(reason, self)
