@@ -32,46 +32,46 @@ class DefaultMailbox(private val systemMessages: MailboxQueue, private val userM
     }
 
     private suspend fun run(){
-        var msg: Any? = null
-        try {
-            for (i in 0 until dispatcher.throughput) {
-                msg = systemMessages.pop()
-                if (msg != null) {
-                    when (msg) {
-                        is SuspendMailbox -> suspended = true
-                        is ResumeMailbox -> suspended = false
-                    }
-                    invoker.invokeSystemMessage(msg as SystemMessage)
-                    for (stat in stats) stat.messageReceived(msg)
-                }
-                if (!suspended) {
-                    msg = userMailbox.pop()
-                    if (msg == null) break
-                    else {
-                        invoker.invokeUserMessage(msg)
-                        for (stat in stats) stat.messageReceived(msg)
-                    }
-                } else {
-                    break
-                }
-            }
-        } catch (e: Exception) {
-            if (msg != null) invoker.escalateFailure(e, msg)
-        }
 
-        status.set(MailboxStatus.Idle)
-        if (systemMessages.hasMessages || (!suspended && userMailbox.hasMessages)) {
-            schedule()
-        } else {
-            for (stat in stats) stat.mailboxEmpty()
-        }
     }
 
     private fun schedule() {
         val wasIdle = status.compareAndSet(MailboxStatus.Idle, MailboxStatus.Busy)
         if (wasIdle) {
             dispatcher.schedule {
-                run()
+                var msg: Any? = null
+                try {
+                    for (i in 0 until dispatcher.throughput) {
+                        msg = systemMessages.pop()
+                        if (msg != null) {
+                            when (msg) {
+                                is SuspendMailbox -> suspended = true
+                                is ResumeMailbox -> suspended = false
+                            }
+                            invoker.invokeSystemMessage(msg as SystemMessage)
+                            for (stat in stats) stat.messageReceived(msg)
+                        }
+                        if (!suspended) {
+                            msg = userMailbox.pop()
+                            if (msg == null) break
+                            else {
+                                invoker.invokeUserMessage(msg)
+                                for (stat in stats) stat.messageReceived(msg)
+                            }
+                        } else {
+                            break
+                        }
+                    }
+                } catch (e: Exception) {
+                    if (msg != null) invoker.escalateFailure(e, msg)
+                }
+
+                status.set(MailboxStatus.Idle)
+                if (systemMessages.hasMessages || (!suspended && userMailbox.hasMessages)) {
+                    schedule()
+                } else {
+                    for (stat in stats) stat.mailboxEmpty()
+                }
             }
         }
     }
