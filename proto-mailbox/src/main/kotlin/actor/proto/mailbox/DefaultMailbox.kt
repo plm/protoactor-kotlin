@@ -51,6 +51,8 @@ class DefaultMailbox(private val systemMessages: MailboxQueue, private val userM
                         invoker.invokeUserMessage(msg)
                         for (stat in stats) stat.messageReceived(msg)
                     }
+                } else {
+                    break
                 }
             }
         } catch (e: Exception) {
