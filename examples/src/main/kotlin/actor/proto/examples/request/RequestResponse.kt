@@ -3,7 +3,7 @@ package actor.proto.examples.request
 import actor.proto.fromFunc
 import actor.proto.requestAwait
 import actor.proto.spawn
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.runBlocking
 import java.time.Duration
 
 fun main(args: Array<String>) = runBlocking {

@@ -4,7 +4,7 @@ import actor.proto.mailbox.Dispatcher
 import actor.proto.mailbox.Mailbox
 import actor.proto.mailbox.MessageInvoker
 import actor.proto.mailbox.SystemMessage
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.runBlocking
 
 class TestMailbox : Mailbox {
     private lateinit var _invoker: MessageInvoker

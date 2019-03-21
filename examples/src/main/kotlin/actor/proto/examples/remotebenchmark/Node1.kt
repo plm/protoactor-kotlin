@@ -5,7 +5,7 @@ import actor.proto.examples.remotebenchmark.Messages.Ping
 import actor.proto.examples.remotebenchmark.Messages.Pong
 import actor.proto.remote.Remote
 import actor.proto.remote.Serialization.registerFileDescriptor
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.runBlocking
 import java.lang.System.currentTimeMillis
 import java.time.Duration
 import java.util.concurrent.CountDownLatch

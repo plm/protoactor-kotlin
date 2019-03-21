@@ -1,7 +1,7 @@
 package actor.proto.tests
 
 import actor.proto.*
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
 import java.time.Duration

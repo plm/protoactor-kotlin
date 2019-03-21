@@ -4,10 +4,10 @@
 package actor.proto.java
 
 import actor.proto.*
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.future.asCompletableFuture
-import kotlinx.coroutines.experimental.future.await
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.future.asCompletableFuture
+import kotlinx.coroutines.future.await
 import java.time.Duration
 import java.util.concurrent.CompletableFuture
 
@@ -55,7 +55,7 @@ fun spawnNamed(props: Props, name: String): PID {
 fun send(target: PID, message: Any) = DefaultActorClient.send(target, message)
 fun request(target: PID, message: Any, sender: PID) = DefaultActorClient.request(target, message, sender)
 fun <T> requestAwait(target: PID, message: Any, timeout: Duration): CompletableFuture<T> {
-    val d = async(CommonPool) {
+    val d = GlobalScope.async {
         DefaultActorClient.requestAwait<T>(target, message, timeout)
     }
     return d.asCompletableFuture()

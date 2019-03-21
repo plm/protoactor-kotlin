@@ -3,8 +3,8 @@ package actor.proto.router.tests
 import actor.proto.*
 import actor.proto.router.fixture.TestMailbox
 import actor.proto.router.*
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import java.time.Duration
 import java.util.concurrent.TimeUnit
@@ -99,7 +99,7 @@ class BroadcastGroupTests {
         runBlocking {
             val (router, routee1, routee2, routee3) = createBroadcastGroupRouterWith3Routees()
             send(router,RouterBroadcastMessage("hello"))
-            delay(100, TimeUnit.MILLISECONDS)
+            delay(100)
             assertEquals("hello", requestAwait(routee1,"received?", _timeout))
             assertEquals("hello", requestAwait(routee2,"received?", _timeout))
             assertEquals("hello", requestAwait(routee3,"received?", _timeout))
