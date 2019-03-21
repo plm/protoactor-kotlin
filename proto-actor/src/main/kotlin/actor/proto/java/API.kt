@@ -8,6 +8,7 @@ import kotlinx.coroutines.GlobalScope
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.future.asCompletableFuture
 import java.time.Duration
 import java.util.concurrent.CompletableFuture
 
@@ -61,9 +62,8 @@ fun spawnNamed(props: Props, name: String): PID {
 fun send(target: PID, message: Any) = DefaultActorClient.send(target, message)
 fun request(target: PID, message: Any, sender: PID) = DefaultActorClient.request(target, message, sender)
 fun <T> requestAwait(target: PID, message: Any, timeout: Duration): CompletableFuture<T> {
-    //val d = GlobalScope.async {
-    //    DefaultActorClient.requestAwait<T>(target, message, timeout)
-    //}
-    null!!
-    //return d.asCompletableFuture()
+    val d = GlobalScope.async {
+        DefaultActorClient.requestAwait<T>(target, message, timeout)
+    }
+    return d.asCompletableFuture()
 }
