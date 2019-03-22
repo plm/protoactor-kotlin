@@ -51,7 +51,7 @@ class LocalActor(count: Int, messageCount: Int, wg: CountDownLatch) : Actor {
     private val _messageCount: Int = messageCount
     private val _wg: CountDownLatch = wg
 
-    suspend override fun Context.receive(msg: Any) {
+    override suspend fun Context.receive(msg: Any) {
         when (msg) {
             is Pong -> {
                 _count++
