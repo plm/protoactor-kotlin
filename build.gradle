@@ -75,6 +75,3 @@ gradle.taskGraph.whenReady { graph ->
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.3.1'
-}
